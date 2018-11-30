@@ -26,7 +26,7 @@
 	            <a class="navbar-brand" href="#home">
 	                <img id="image" class="imgg" src="img/logo.png" alt="">
 	            </a>
-	            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	            <button id="toggler" class="navbar-toggler white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	                <i class="fas fa-bars paragragh h2--color"></i>
 	            </button>
 	            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -35,21 +35,21 @@
 	                        <a class="nav-link head-link head-link--yellow"  href="#start">Start earning or save money by sharing
 	                        <span class="sr-only">(current)</span></a>
 	                     </li>
-	                    <li class="nav-item ml-5 text-center">
+	                    <li class="nav-item text-center">
 	                        <a class="nav-link" href="#aboutUs">About us</a>
 	                    </li>
-	                    <li class="nav-item ml-5 text-center">
+	                    <li class="nav-item text-center">
 	                        <a class="nav-link " href="#whyUs">Why Stayawaykey</a>
 	                    </li>
-	                    <li class="nav-item ml-5 text-center">
+	                    <li class="nav-item text-center">
 	                        <a class="nav-link head-link head-link--blue" href="#portfolio">Join us</a>
 	                    </li>
-	                    <li class="nav-item ml-5 text-center">
+	                    <li class="nav-item text-center">
 	                        <a class="nav-link " href="#portfolio">Contact</a>
 	                    </li>
-	                    <li class="nav-item ml-5 text-center dropdown">
+	                    <li class="nav-item text-center dropdown">
 	                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            <svg width="16px" height="16px">
+	                            <svg id="globs" class="globus" width="16px" height="16px">
 	                                <use xlink:href="#globus"></use>
 	                            </svg>
 	                            En
@@ -79,21 +79,20 @@
 						<form>
 							<div class="form-row">
 								<div class="form-group col-lg-3 col-md-6 col-12 form-first">
-									<input type="text" class="form-control form-first__size" placeholder="Name">
+									<input type="text" class="form-control form-first__size" placeholder="Your name">
 								</div>
 								<div class="form-group col-lg-3 col-md-6 col-12 form-first">
-									<input type="email" class="form-control form-first__size" placeholder="Email">
+									<input type="email" class="form-control form-first__size" placeholder="Email adress">
 								</div>
 								<div class="form-group col-lg-3 col-md-6 col-12 form-first">
-									<input type="email" class="form-control form-first__size" placeholder="Email">
+									<input type="text" class="form-control form-first__size" placeholder="Platform type Country">
 								</div>
 								<div class="form-group col-lg-3 col-md-6 col-12 form-first">
 									<button type="button" class="btn form-first__btn col-12" data-toggle="modal" data-target="#exampleModalCenter">
-									  Confirm identity
+									  Send
 									</button>
 								</div>
-								<!-- Button trigger modal -->
-									
+								
 
 									<!-- Modal -->
 									<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -151,17 +150,17 @@
 					<ul class="lisp d-flex justify-content-start">
 						<li class="lisp ">
 							<a class="vertical-social__icons test3" href="">
-								<i class="fab fa-facebook-f "></i>
+								<i class="fab fa-facebook-f icon-hover"></i>
 							</a>
 						</li>
 						<li class="lisp">
 							<a class="vertical-social__icons" href="">
-								<i class="fab fa-instagram"></i>
+								<i class="fab fa-instagram icon-hover"></i>
 							</a>
 						</li>
 						<li class="lisp">
 							<a class="vertical-social__icons" href="">
-								<i class="fab fa-twitter"></i>
+								<i class="fab fa-twitter icon-hover"></i>
 							</a>
 						</li>
 					</ul>
@@ -490,15 +489,15 @@
 	<script src="js/scripts.min.js"></script>
 	<!-- <script src="js/popper.min.js"></script> -->
 		<script>
-			$('#myModal').on('shown.bs.modal', function () {
-  				$('#myModal').trigger('focus')
-			})
+
 
 			$(document).scroll(function() {
 		  		var menu = $("#menu");
 		  		var link = $(".nav-link");
 		  		var img = $("#image");
 		  		var dropdown = $(".dropdown-item");
+		  		var toggler = $("#toggler");
+		  		var globus = $('#globs');
 
 
 		    	var top = $(this).scrollTop();
@@ -507,12 +506,20 @@
 				link.addClass('color-menu');
 				img.attr("src", "img/logo-scroll.png");
 				dropdown.addClass('color-menu');
+				toggler.removeClass('white');
+				globus.addClass('globus-blue');
+
+
 
 		    } else if ( top < 200) {
 				menu.css("background", "transparent");
 				link.removeClass('color-menu');
 				img.attr("src", "img/logo.png");
 				dropdown.removeClass('color-menu');
+				toggler.addClass('white');
+				globus.removeClass('globus-blue');
+
+
 
 		    }
   		});
@@ -553,7 +560,7 @@
 	<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" >
 		<!-- Globus -->
 		<symbol id="globus" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" >
-			<path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+			<path fill-rule="evenodd" 
 			 d="M8.000,-0.001 C3.582,-0.001 -0.000,3.581 -0.000,8.000 C-0.000,12.418 3.582,16.000 8.000,16.000 C12.418,16.000 16.000,12.418 16.000,8.000 C16.000,3.581 12.418,-0.001 8.000,-0.001 ZM12.639,4.195 C12.570,4.253 12.488,4.312 12.423,4.371 C11.928,4.802 11.710,4.976 11.303,4.992 C11.190,4.995 11.084,4.999 10.982,4.999 C10.625,4.999 10.535,4.951 10.422,4.850 C10.364,4.799 10.360,4.694 10.449,4.172 C10.500,3.874 10.551,3.564 10.560,3.239 C10.564,3.018 10.605,2.821 10.652,2.624 C11.421,3.004 12.099,3.538 12.639,4.195 ZM8.484,12.066 C8.235,12.518 7.963,12.682 7.315,13.042 L7.018,13.207 C6.635,13.430 6.290,13.545 5.926,13.624 C4.728,13.182 3.709,12.375 3.011,11.331 C3.035,11.096 3.173,10.967 3.810,10.589 C4.231,10.339 4.755,10.028 5.199,9.535 C5.536,9.159 5.725,8.720 5.876,8.368 C5.876,8.368 5.876,8.366 5.877,8.365 C6.015,8.674 6.214,9.042 6.589,9.337 C7.111,9.754 7.665,9.854 8.069,9.927 C8.431,9.991 8.517,10.021 8.575,10.093 C8.844,10.434 9.075,10.967 8.484,12.066 ZM9.717,13.747 C9.901,13.545 10.079,13.316 10.240,13.021 C11.310,11.035 10.779,9.659 10.143,8.853 C9.603,8.171 8.893,8.043 8.424,7.957 C8.131,7.906 7.959,7.871 7.831,7.769 C7.776,7.726 7.696,7.537 7.639,7.399 C7.458,6.970 7.121,6.172 6.109,6.032 C4.758,5.859 4.288,6.997 4.038,7.579 C3.935,7.819 3.827,8.069 3.712,8.198 C3.473,8.462 3.140,8.659 2.789,8.869 C2.585,8.989 2.362,9.131 2.143,9.293 C2.052,8.876 2.000,8.443 2.000,8.000 C2.000,4.686 4.686,1.999 8.000,1.999 C8.244,1.999 8.484,2.019 8.721,2.048 C8.634,2.387 8.569,2.761 8.560,3.188 C8.554,3.411 8.514,3.627 8.478,3.833 C8.363,4.507 8.188,5.524 9.084,6.338 C9.738,6.921 10.411,6.999 10.982,6.999 C11.107,6.999 11.238,6.995 11.376,6.990 C12.445,6.951 13.083,6.441 13.638,5.962 C13.868,6.599 14.000,7.282 14.000,8.000 C14.000,10.716 12.193,13.009 9.717,13.747 Z"/>
 		</symbol>
 		<!-- Slider arrow Left -->
@@ -641,7 +648,7 @@ l		</symbol>
 				</div>
 				<div class="col-md-2 col-6 text-center text-md-left pb-4">
 					<div class="pb-4 text">Follow us:</div>
-					<ul class="lisp d-flex justify-content-center justify-contentm-md-start">
+					<ul class="lisp d-flex justify-content-center justify-content-md-start">
 						<li class="lisp">
 							<a class="lisp__social" href="">
 								<i class="fab fa-facebook-f"></i>
@@ -665,7 +672,7 @@ l		</symbol>
 				<div class="">StayAwayKey, 2018 ©</div>
 				<div class="btn-grodown dropdown">
 				  <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                  <svg width="16px" height="16px">
+	                  <svg class="globus" width="16px" height="16px">
 	                      <use xlink:href="#globus"></use>
 	                  </svg>
 	                       En
