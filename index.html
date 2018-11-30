@@ -298,13 +298,13 @@
 				<div class="row">
 					<div class="col-12 col-md-6 key">
 						<img class="key__img" src="img/find1.png" alt="">
-						<p class="key__article">
+						<p class="key__article text-center">
 							Stayawaykey makes sure that you can share your unused seats in your car with others who, like you, have the same departure point as your destination. In addition, as a driver and passenger you can set certain preferences so that a suitable match is made between you and your future fellow passengers.
 						</p>
 					</div>
 					<div class="col-12 col-md-6 key">
 						<img class="key__img key__img--pad" src="img/find2.png" alt="">
-						<p class="key__article">
+						<p class="key__article text-center">
 							As a passenger you pay an amount that is lower than the cost of public transport and as a driver you receive the amount that your fellow passenger (s) have paid. This allows you as a passenger and driver to save on your transport costs. Loading space can also be shared, through our marketplace it is possible to offer or search for cargo space . If this is unused, you can earn extra money with this.
 						</p>
 					</div>
@@ -312,13 +312,13 @@
 				<div class="row">
 					<div class="col-12 col-md-6 key">
 						<img class="key__img key__img--pad" src="img/find3.png" alt="">
-						<p class="key__article">
+						<p class="key__article text-center">
 							It is also possible to rent your car through our sensor that ensures that your car can be shared with others. This sensor can be built into every car and from that moment it is possible to open a car and determine the location so that you can share your car safely, reliably and without hassle. There is also a payment function that you can activate so that you as a driver at an affordable price a car can borrow and as owner can earn on your car so you can ultimately save on your car costs.
 						</p>
 					</div>
 					<div class="col-12 col-md-6 key">
 						<img class="key__img key__img--pad" src="img/find4.png" alt="">
-						<p class="key__article">
+						<p class="key__article text-center">
 							In addition, for business use at any time you share a car (ride) the kilometers are stored and tracked with which you can later declare or use all kilometers for the tax authorities. It is also possible to set reminders in the case of maintenance and the like for a certain number of kilometers. This not only gives you more control over your car, it is also possible to gain more insight into car costs and car use.
 						</p>
 					</div>
@@ -397,7 +397,6 @@
 						</div>
 						<div class="sliders sliders__name">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, odio?</div>
 						<div class="sliders sliders__proffession">
-							<img src="img\clock.png" alt="">
 							5.10.2017
 						</div>
 					</div>
@@ -409,8 +408,7 @@
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, inventore.
 					</div>
 						<div class="sliders sliders__proffession">
-							<img src="img\clock.png" alt="">
-							<p>28.09.2017</p>
+							28.09.2017
 						</div>
 					</div>
 					<div class="sliders">
@@ -419,7 +417,6 @@
 						</div>
 						<div class="sliders sliders__name">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, a.</div>
 						<div class="sliders sliders__proffession">
-							<img src="img\clock.png" alt="">
 							19.09.2017
 						</div>
 					</div>
@@ -505,13 +502,13 @@
 
 
 		    	var top = $(this).scrollTop();
-		    	if ( top >= 400 ) {
+		    	if ( top >= 200 ) {
 				menu.css("background" ,"#fff");
 				link.addClass('color-menu');
 				img.attr("src", "img/logo-scroll.png");
 				dropdown.addClass('color-menu');
 
-		    } else if ( top < 400) {
+		    } else if ( top < 200) {
 				menu.css("background", "transparent");
 				link.removeClass('color-menu');
 				img.attr("src", "img/logo.png");
@@ -604,13 +601,13 @@ l		</symbol>
 		</symbol>
 	</svg>
 		<!-- Smallarrow -->
-		<svg 
+		<!-- <svg 
 			 xmlns="http://www.w3.org/2000/svg"
 			 xmlns:xlink="http://www.w3.org/1999/xlink"
 			 width="11px" height="16px">
 			<path fill-rule="evenodd"  fill="rgb(2, 169, 243)"
 			 d="M0.499,13.718 L6.568,7.890 L0.575,2.317 L2.587,0.503 L10.502,7.860 L2.544,15.501 L2.544,15.503 L0.499,13.718 L0.499,13.718 Z"/>
-		</svg>
+		</svg> -->
 		
 	</svg>		
 		
@@ -643,8 +640,8 @@ l		</symbol>
 					</ul>
 				</div>
 				<div class="col-md-2 col-6 text-center text-md-left pb-4">
-					<div class="pb-4">Follow us:</div>
-					<ul class="lisp d-flex justify-content-center">
+					<div class="pb-4 text">Follow us:</div>
+					<ul class="lisp d-flex justify-content-center justify-contentm-md-start">
 						<li class="lisp">
 							<a class="lisp__social" href="">
 								<i class="fab fa-facebook-f"></i>
@@ -667,13 +664,17 @@ l		</symbol>
 			<div class="row footer-line d-flex justify-content-between">
 				<div class="">StayAwayKey, 2018 ©</div>
 				<div class="btn-grodown dropdown">
-				  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Dropup
-				  </button>
-				  <div class="dropdown-menu">
-				    <!-- Dropdown menu links -->
-				    <a class="dropdown-item" href="#">En</a>
-				  </div>
+				  <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                  <svg width="16px" height="16px">
+	                      <use xlink:href="#globus"></use>
+	                  </svg>
+	                       En
+	                        </a>
+	                  <div class="dropdown-menu dropdown-menu-right setting dropdown-user" aria-labelledby="navbarDropdown" >
+	                      <a class="dropdown-item dropdown-user__link" href="#">En</a>
+	                      <a class="dropdown-item dropdown-user__link" href="#">Ua</a>
+	                      <a class="dropdown-item dropdown-user__link" href="#">Ru</a>
+	               	  </div>
 				</div>
 			</div>
 	</section>
